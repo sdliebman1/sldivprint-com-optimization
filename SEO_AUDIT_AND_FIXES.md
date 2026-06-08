@@ -2,101 +2,90 @@
 
 **Date**: June 8, 2026
 **Auditor**: Grok (xAI) for Sam Liebman, SL Diversified Printing
-**Site**: https://sldivprint.com (WordPress-based, content-heavy service site)
+**Site**: https://sldivprint.com (WordPress + AIOSEO)
 
 ## Executive Summary
-The site has strong foundational content and brand story but needs technical polish, schema completion, performance tuning, and content refinement to compete for #1 positions in competitive "rush [service]" verticals and to be reliably cited by AI systems. No major red flags like malware or penalties detected from public crawl. Main opportunities: Schema (big for rich results + AI), speed/images, meta optimization, E-E-A-T signals, and voice-friendly formatting.
+Strong content and brand story. Main opportunities: Optimize AIOSEO settings, add comprehensive schema via AIOSEO tools, improve performance (images + caching), strengthen E-E-A-T, and format content for AI/voice. No major penalties or security issues detected publicly.
 
-## Technical Audit Findings
+## Technical Audit Findings (Tailored for AIOSEO)
 
 ### 1. Indexing & Crawlability
-- Likely has sitemap (WP default or via SEO plugin) – confirm in GSC.
-- robots.txt: Should allow /wp-content/ for assets if using caching; disallow admin.
-- **Fix**: Install/confirm SEO plugin (Rank Math recommended for built-in schema, redirects, 404 monitor). Submit sitemap.xml in GSC. Request indexing for key URLs (home, /rush-orders/, /printing/apparel-branding/, /checks/, /order-fulfillment/, blog posts).
+- AIOSEO should already generate sitemap.xml — confirm it's enabled and submitted in Google Search Console.
+- **Fix**: In AIOSEO → Sitemap Settings, ensure "Enable XML Sitemap" is on. Submit the sitemap URL in GSC and Bing Webmaster Tools. Request indexing for key pages (home, rush orders, apparel, promo, checks, fulfillment, blog posts).
 
-### 2. On-Page SEO
-- Titles/Descriptions: Good keyword inclusion but ensure every page has custom, unique meta. Front-load primary keyword. Include brand. Add power words (Fast, Rush, 24-48 Hour, Emergency, Nationwide).
-- Headings: Good H1/H2 structure from content. Ensure one H1 per page, logical hierarchy. Avoid keyword stuffing.
-- **Fix**: Use Rank Math or Yoast to bulk edit titles/descriptions. Audit 10-15 key pages first.
+### 2. On-Page SEO (Titles, Meta, Headings)
+- Use AIOSEO's powerful Titles & Meta editor (per page/post or global templates).
+- **Fix**: Go through top 10-15 pages and set unique, compelling titles (front-load primary keyword + brand, keep ~50-60 chars) and meta descriptions (~120-155 chars). Include power words like "24-48 Hour Rush", "Emergency", "Nationwide".
 
-### 3. Schema Markup (Critical Gap for Rankings & AI)
-- Probably minimal or none for Organization/Service/FAQ.
-- **Fix**: Add JSON-LD immediately (see /schema/ folder). Prioritize:
-  1. Organization + LocalBusiness (address, geo, opening hours if applicable, sameAs to socials/LinkedIn).
-  2. Service or multiple for each offering.
-  3. FAQPage for existing FAQ sections.
-  4. BreadcrumbList (auto via plugin).
-  5. WebSite with potentialAction SearchAction.
-  Validate all with https://search.google.com/test/rich-results
+### 3. Schema Markup (Biggest Quick Win — Use AIOSEO)
+- Likely minimal or basic schema currently.
+- **Fix**: Use AIOSEO's built-in Schema features (highly recommended over manual JSON-LD where possible):
+  1. Go to AIOSEO → Schema (or in individual page/post editor → Schema tab).
+  2. Set up **Organization** or **LocalBusiness** globally (use details from `/schema/organization.jsonld` and `localbusiness.jsonld`).
+  3. Enable **FAQPage** schema on pages that have FAQ sections.
+  4. Add **Service** or **HowTo** schema where relevant.
+  5. For advanced/custom needs, paste the JSON-LD from this repo into AIOSEO's "Custom Schema" / "Custom Code" area or use a lightweight code snippet plugin.
+  - Validate everything at https://search.google.com/test/rich-results
 
 ### 4. Performance (Core Web Vitals)
-- Unknown exact scores without live test, but typical WP issues: unoptimized images, too many plugins, no caching, render-blocking.
+- Typical WP issues: images, lack of caching, render-blocking resources.
 - **Fix Steps**:
-  1. Install image optimization plugin (Imagify free tier or ShortPixel).
-  2. Enable caching + minification (LiteSpeed Cache if on LiteSpeed server, else WP Rocket ~$59/yr or free alternatives like WP Super Cache + Autoptimize).
-  3. Use Cloudflare (free) + APO if possible.
-  4. Defer non-critical JS, preload key fonts/CSS.
-  5. Switch to modern image formats (WebP/AVIF).
-  6. Lazy load below-fold images.
-  7. Consider host upgrade if scores <70 mobile.
-  Target: LCP <2.5s, FID <100ms, CLS <0.1, INP <200ms.
+  1. Install **ShortPixel Image Optimizer** or **Imagify** — bulk optimize all images to WebP + lazy load.
+  2. Add a caching plugin: WP Rocket (recommended) or LiteSpeed Cache.
+  3. Enable Cloudflare (free) + APO if on compatible host.
+  4. In AIOSEO or caching plugin, enable minification and defer JS where safe.
+  5. Target: LCP <2.5s, INP <200ms, CLS <0.1.
 
 ### 5. Mobile & UX
-- Assume responsive but verify specific CTAs and forms.
-- **Fix**: Google Mobile-Friendly Test. Ensure quote forms work well on mobile (big buttons, minimal fields initially).
-- Accessibility: Add aria labels if missing, sufficient contrast.
+- Test with Google's Mobile-Friendly Test.
+- Make quote CTAs large and thumb-friendly.
 
 ### 6. Content Quality & E-E-A-T
-- Strengths: Real stories, numbers (PPAI stats), FAQs, history since 1987.
-- Gaps: Author bylines with credentials, updated dates, more specific case studies with results, comparison tables (already some good ones like printing methods).
-- **Fix**: Add Sam Liebman author box on blog/service pages ("Sam Liebman, CEO | 15+ years leading SL Diversified Printing | Family business since 1987"). Update About page prominently. Add last updated dates. Expand thin pages with data/visuals.
+- Add Sam Liebman author bylines and bios (AIOSEO has author SEO features).
+- Use comparison tables and step-by-step lists (already starting well on your site).
+- Update About page with clear history and credentials.
 
-### 7. Other Errors/Potential Issues
-- Duplicate content risk from similar service descriptions across pages – use unique intros + canonicals.
-- Outbound links: Ensure quality (no spammy). Internal linking strong but systematize.
-- Shop subdomain (shop.sldivprint.com): Ensure consistent branding, meta, perhaps link back prominently. Optimize product pages if ecom.
-- Security: Run free Wordfence scan. Update everything.
-- Analytics: Confirm GA4 + GSC connected. Add Microsoft Clarity for heatmaps/session recordings (free).
+### 7. Other
+- Use AIOSEO's 404 monitor and redirect tools for broken links.
+- Run AIOSEO's built-in SEO Audit / Site Analyzer for quick wins.
+- Shop subdomain: Ensure consistent meta via AIOSEO if possible or manual.
 
-## Prioritized 30-Day Action Plan
+## Prioritized 30-Day Action Plan (AIOSEO-Focused)
 
-**Week 1: Technical Foundation**
-- [ ] Claim/verify sldivprint.com in Google Search Console + Bing Webmaster Tools.
-- [ ] Install Rank Math SEO (or Yoast) + configure properly (titles, sitemap, schema basics, redirects).
-- [ ] Add Organization + FAQ schema site-wide (copy from this repo).
-- [ ] Bulk optimize images or install auto-optimizer plugin.
-- [ ] Set up Cloudflare (even free plan helps).
-- [ ] Run full PageSpeed Insights on mobile + desktop for home and 3 key pages. Note scores and issues.
-- [ ] Add alt text to top 20 images (use descriptive, keyword where natural).
+**Week 1: AIOSEO Foundation + Schema**
+- [ ] In AIOSEO: Enable Sitemap, configure Titles & Meta templates (include brand "SLDivPrint").
+- [ ] Set up Organization / LocalBusiness schema globally in AIOSEO using the details in `/schema/`.
+- [ ] Add FAQ schema to pages with existing FAQs.
+- [ ] Install image optimizer (ShortPixel/Imagify) and run bulk optimization.
+- [ ] Set up Cloudflare.
+- [ ] Run PageSpeed Insights on mobile + desktop for home and key pages. Note the specific issues.
+- [ ] Add descriptive alt text to top images.
 
-**Week 2: Content & On-Page Polish**
-- [ ] Rewrite/improve meta titles & descriptions for top 10 pages using keyword research (primary + secondary + long-tail).
-- [ ] Audit and fix internal linking (add contextual links in body text).
-- [ ] Enhance 2-3 key pages with tables, more FAQs, step-by-steps, author bio.
-- [ ] Create or update About page with full E-E-A-T (Sam bio, timeline, values, contact).
+**Week 2: Content Polish in AIOSEO**
+- [ ] Edit titles & meta descriptions for top 10 pages using AIOSEO editor.
+- [ ] Improve internal linking (contextual links in body text to related services).
+- [ ] Enhance 2-3 key pages with more tables, FAQs, author info.
+- [ ] Strengthen About page E-E-A-T.
 - [ ] Submit key pages for indexing in GSC.
 
-**Week 3: Performance & Local/AI**
-- [ ] Implement full caching/minify stack. Re-test PageSpeed (target 85+).
-- [ ] Add LocalBusiness schema with exact address: 6501 E Greenway Pkwy, Ste 103-511, Scottsdale, AZ 85254.
-- [ ] Optimize Google Business Profile: Add categories (e.g., "Print Shop", "Promotional Products Supplier"), services list, photos of work, weekly posts about rush orders/trade shows.
-- [ ] Test voice queries manually: "rush printing near me", "custom apparel for events fast", etc. on Google app/Siri. Optimize gaps.
-- [ ] Add more structured data (HowTo for order process, Product for popular items).
+**Week 3: Performance + Local/AI**
+- [ ] Install caching plugin and configure (minify, combine, lazy load).
+- [ ] Re-test PageSpeed (target 85-95+).
+- [ ] Add more schema types in AIOSEO (Service, HowTo for ordering process).
+- [ ] Optimize Google Business Profile with categories, services, photos, posts.
+- [ ] Test voice queries on Google/Siri and refine content gaps.
 
-**Week 4: Measurement & Iteration**
-- [ ] Review GSC data: Top queries, pages, countries. Identify quick wins (low competition long-tails).
-- [ ] Set up weekly reporting (simple Google Sheet or Notion).
-- [ ] Plan next content: 4 blog posts targeting PAA/voice questions.
-- [ ] Backlink opportunity audit (competitor backlinks via free tools or Ahrefs trial).
+**Week 4: Measurement**
+- [ ] Review Google Search Console data (queries, pages, positions).
+- [ ] Use AIOSEO's analytics/reports if available.
+- [ ] Plan next content batch targeting long-tail/voice keywords.
 
-## Recommended Tools (Free or Low-Cost)
-- SEO: Rank Math (free), Google Search Console, Bing Webmaster, Ubersuggest (free), AlsoAsked.com
-- Performance: PageSpeed Insights, GTmetrix, WebPageTest.org
-- Schema Validation: Rich Results Test, Schema Markup Validator
-- Content: AnswerThePublic, AlsoAsked, ChatGPT/Claude for outlines
-- Backlinks: Hunter.io or free alternatives for outreach, HARO (Help a Reporter Out)
-- Monitoring: Google Alerts for brand + keywords, Microsoft Clarity
+## Recommended Tools
+- **Core**: AIOSEO (already installed)
+- Image opt: ShortPixel or Imagify
+- Caching: WP Rocket or LiteSpeed Cache
+- CDN: Cloudflare
+- Free audits: PageSpeed Insights, Rich Results Test, Mobile-Friendly Test, GSC
+- Question research: AlsoAsked.com, AnswerThePublic
 
-**After fixes, re-crawl with "URL Inspection" in GSC and request indexing.**
-
-This positions the site for rapid ranking improvements in 4-12 weeks for targeted terms, with compounding authority over 6-12 months.
+After changes, re-crawl with URL Inspection in GSC and request indexing.
