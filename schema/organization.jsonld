@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://sldivprint.com/#organization",
+  "name": "SL Diversified Printing",
+  "alternateName": "SLDivPrint",
+  "url": "https://sldivprint.com",
+  "logo": "https://sldivprint.com/wp-content/uploads/your-logo.png",
+  "description": "Family-owned rush printing, custom apparel, and promotional products experts since 1987. 24-48 hour turnaround for events, trade shows, and businesses nationwide. Based in Scottsdale, Arizona.",
+  "foundingDate": "1987",
+  "founders": [{
+    "@type": "Person",
+    "name": "Steve Liebman"
+  }],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6501 E Greenway Pkwy, Ste 103-511",
+    "addressLocality": "Scottsdale",
+    "addressRegion": "AZ",
+    "postalCode": "85254",
+    "addressCountry": "US"
+  },
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "telephone": "+1-800-960-3676",
+    "contactType": "customer service",
+    "email": "SL@SLDivPrint.com",
+    "availableLanguage": ["English"]
+  }],
+  "sameAs": [
+    "https://www.linkedin.com/in/sam-l-b7487b34/",
+    "https://www.facebook.com/sldivprint/",
+    "https://twitter.com/sldivprint",
+    "https://www.instagram.com/sldivprint/"
+  ]
+}

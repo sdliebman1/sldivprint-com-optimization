@@ -1,0 +1,32 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://sldivprint.com/#localbusiness",
+  "name": "SL Diversified Printing",
+  "url": "https://sldivprint.com",
+  "telephone": "+1-800-960-3676",
+  "email": "SL@SLDivPrint.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6501 E Greenway Pkwy, Ste 103-511",
+    "addressLocality": "Scottsdale",
+    "addressRegion": "AZ",
+    "postalCode": "85254",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "33.6257",
+    "longitude": "-111.9260"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "image": "https://sldivprint.com/wp-content/uploads/your-hero-image.jpg",
+  "description": "Expert rush printing and custom branded merchandise since 1987. Serving events, trade shows, and businesses nationwide from our Scottsdale, Arizona base."
+}

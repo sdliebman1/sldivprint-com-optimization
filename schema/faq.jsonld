@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fast can I get custom apparel or promotional products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SLDivPrint specializes in 24-48 hour rush printing for custom apparel, hoodies, tees, tote bags, water bottles, and thousands of promo items. Many items have low or zero minimums. Contact us for an instant quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer same-day or next-day step and repeat banners for trade shows?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We have delivered full step and repeat banner setups and retractable banners same-day or within 24 hours for emergency trade show needs across the US, including New York and major events like Coachella."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What printing methods do you use for custom apparel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer Screen Printing (great for bulk, vibrant colors), Embroidery (premium textured look, durable for polos/caps), and DTG (Direct-to-Garment) for full-color detailed designs on small runs or single items."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you handle order fulfillment and warehousing for my branded merchandise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We provide secure warehousing, kitting, pick-pack-ship, e-commerce integration (Shopify/Amazon), live tracking, and nationwide fulfillment with 99% accuracy. Perfect for brands scaling events or subscription boxes."
+      }
+    }
+  ]
+}
